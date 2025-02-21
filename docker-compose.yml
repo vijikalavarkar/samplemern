@@ -10,14 +10,14 @@ services:
   backend:
     build: ./backend
     container_name: foodybackend-container
-    image: vkalavarkar/foodyback:v1
+    image: vijikalavarkar/foodyback:v1
     ports:
       - "4000:4000"
 
   frontend:
     build: ./frontend
     container_name: foodyfrontend-container
-    image: vkalavarkar/foodyfront:v1
+    image: vijikalavarkar/foodyfront:v1
     ports:
       - "5173:5173"
 
