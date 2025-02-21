@@ -1,11 +1,11 @@
 version: "3.3"
 services:
-  frontend:
-    build: ./frontend
-    container_name: foodyfrontend-container
-    image: vkalavarkar/foodyfront:v1
+  mongo:
+    container_name: mongo-container
+    image: mongo
     ports:
-      - "5173:5173"
+      - "27017:27017"
+  
 
   backend:
     build: ./backend
@@ -13,3 +13,17 @@ services:
     image: vkalavarkar/foodyback:v1
     ports:
       - "4000:4000"
+
+  frontend:
+    build: ./frontend
+    container_name: foodyfrontend-container
+    image: vkalavarkar/foodyfront:v1
+    ports:
+      - "5173:5173"
+
+  test:
+    build: ./test
+    container_name: test-container
+    image: vijikalavarkar/test:v1
+    ports:
+      - "3000:3000"
